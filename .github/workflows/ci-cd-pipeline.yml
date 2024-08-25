@@ -43,7 +43,7 @@ jobs:
 
       - name: Verify Image Push
         run: |
-          docker pull swapi123/eks:${{ github.sha }} || echo "Image not found in the repository"
+          docker pull swapi123/eks:${{ github.sha }}
           docker images
 
       - name: Deploy to Kubernetes

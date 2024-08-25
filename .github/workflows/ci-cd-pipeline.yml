@@ -43,7 +43,7 @@ jobs:
 
       - name: Verify Image Push
         run: |
-          # Verify if the image with the latest tag is pushed successfully
+          # Verify if the image with the  tag is pushed successfully
           docker pull swapi123/eks:latest || echo "Image with 'latest' tag not found. Trying to pull all available tags."
           # Pull all available tags to check what versions are available
           docker pull -a swapi123/eks || echo "No tags available for swapi123/eks"

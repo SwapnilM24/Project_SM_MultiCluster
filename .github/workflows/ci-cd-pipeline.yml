@@ -55,6 +55,8 @@ jobs:
           version: 'latest'
 
       - name: Deploy to Kubernetes
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml

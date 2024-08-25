@@ -19,7 +19,7 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: mvn clean install -f /home/swapnil/Project_SM_MultiCluster/actions-runner/_work/Project_SM_MultiCluster/Project_SM_MultiCluster/pom.xml
+        run: mvn clean install -f /home/swapnil/Project_SM_MultiCluster/Project_SM_MultiCluster/pom.xml
 
       - name: Run tests
         run: mvn test -f /home/swapnil/Project_SM_MultiCluster/actions-runner/_work/Project_SM_MultiCluster/Project_SM_MultiCluster/pom.xml

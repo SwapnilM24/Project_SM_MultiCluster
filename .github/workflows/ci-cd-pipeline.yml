@@ -30,7 +30,7 @@ jobs:
         run: mvn sonar:sonar
 
       - name: Build Docker image
-        run: docker build -t swapi123/eks:latest .
+        run: docker build -t swapi123/eks:v1.0.0 .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -39,12 +39,12 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker push swapi123/eks:latest
+        run: docker push swapi123/eks:v1.0.0
 
       - name: Verify Image Push
         run: |
-          # Verify if the image with the  tag is pushed successfully
-          docker pull swapi123/eks:latest || echo "Image with 'latest' tag not found. Trying to pull all available tags."
+          # Verify if the image with the v1.0.0 tag is pushed successfully
+          docker pull swapi123/eks:v1.0.0 || echo "Image with 'v1.0.0' tag not found. Trying to pull all available tags."
           # Pull all available tags to check what versions are available
           docker pull -a swapi123/eks || echo "No tags available for swapi123/eks"
           docker images
@@ -71,7 +71,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Pull Docker image
-        run: docker pull swapi123/eks:latest
+        run: docker pull swapi123/eks:v1.0.0
 
       - name: Trivy Scan
-        run: trivy image --severity HIGH,CRITICAL swapi123/eks:latest
+        run: trivy image --severity HIGH,CRITICAL swapi123/eks:v1.0.0

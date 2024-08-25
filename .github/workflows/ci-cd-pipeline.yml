@@ -50,7 +50,7 @@ jobs:
 
       - name: Verify Image Push
         run: |
-          # Verify if the image with the v10 tag is pushed successfully
+          # Verify if the image with the v1.0.0 tag is pushed successfully
           docker pull swapi123/eks:v1.0.0 || echo "Image with 'v1.0.0' tag not found. Trying to pull all available tags."
           # Pull all available tags to check what versions are available
           docker pull -a swapi123/eks || echo "No tags available for swapi123/eks"

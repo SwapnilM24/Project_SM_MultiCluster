@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '11'
-          distribution: 'zulu' # Optional: specify the distribution of JDK (e.g., zulu, adoptopenjdk)
+          distribution: 'zulu' # Optional: specify distribution of JDK (e.g., zulu, adoptopenjdk)
 
       - name: Set up Maven
         uses: actions/setup-java@v1
